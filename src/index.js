@@ -49,11 +49,13 @@ function search(e) {
       const country = countries[index];
 
       refs.countryList.innerHTML = '';
-      refs.countryInfo.innerHTML = `<h1><img src="${country.flags.svg}" alt="flag" height="25">
+      refs.countryInfo.innerHTML = `<h1><img src="${
+        country.flags.svg
+      }" alt="flag" height="25">
 <span> ${country.name.official}</span></h1>
 <p><b>Capital:</b> ${country.capital}</p>
 <p><b>Population:</b> ${country.population}</p>
-<p><b>Languages:</b> ${country.languages}</p>`;
+<p><b>Languages:</b> ${Object.values(country.languages).join(', ')}</p>`;
     })
 
     .catch(error => {
